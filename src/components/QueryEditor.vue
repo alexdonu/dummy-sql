@@ -5,7 +5,12 @@ const emit = defineEmits<{
   (event: "execute", query: string): void;
 }>();
 
-const query = ref("select * from users order by username");
+const query = ref(`select * from users
+--select * from employees
+--select userId, birthdate, email from users
+--select userId, username, email from employees
+--select userId, birthdate, email from users order by userId asc
+--select email, username, employedAt from employees order by email desc`);
 
 function runQuery(queryValue: string) {
   query.value = queryValue;

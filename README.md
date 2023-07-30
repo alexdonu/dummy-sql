@@ -1,18 +1,39 @@
-# Vue 3 + TypeScript + Vite
+# Task - Atlan Frontend Engineer
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a dummy application made for interview.
 
-## Recommended IDE Setup
+## Overview
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This application allows you to write SQL querie and run them.
+The queries are in `sync` with data from predefined arrays.
+Only supports `SELECT` queries, which are limited to take specified columns, and order ascending / descending by one of them.
 
-## Type Support For `.vue` Imports in TS
+## Framework and Libraries
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- [vue v3.3.4](https://www.npmjs.com/package/vue/v/3.3.4) - Reactive JavaScript Framework
+  - [vue-virtual-scroller v2.0.0-beta.8](https://www.npmjs.com/package/vue-virtual-scroller/v/2.0.0-beta.8) - Best implementation of virtual scroll concept
+  - [@guolao/vue-monaco-editor ^1.1.3](https://www.npmjs.com/package/@guolao/vue-monaco-editor/v/1.1.3) - Vue component for easy using of monaco editor
+- [@faker-js/faker v8.0.2](https://www.npmjs.com/package/@faker-js/faker/v/8.0.2) - Fake data to seed the databases
+- [node-sql-parser v4.8.0](https://www.npmjs.com/package/node-sql-parser/v/4.8.0) - Parse SQL and returns Abstract Syntax Tree
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Performance and Optimization
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+I have tested my page load time with [Pingdom](https://tools.pingdom.com/#626a2a13f6400000) and you can see results checking the link.
+Unfortunately I had no time to measure [re-rendering performance](https://vuejs.org/guide/best-practices/performance.html#props-stability), but I found great info about that from official documentation.
+I prevent crushing of browser, even my database tables have 100k records, because I used Virtual Scroller.
+
+## Project Setup
+
+```sh
+
+pnpm install
+
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+
+pnpm run dev
+
+```

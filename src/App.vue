@@ -2,6 +2,7 @@
 import { db, QUERY_INFO } from "./data/db";
 import { Parser } from "node-sql-parser";
 import { computed, ref } from "vue";
+// @ts-ignore
 import { RecycleScroller } from "vue-virtual-scroller";
 
 const query = ref(`--select * from users

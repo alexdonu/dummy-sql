@@ -1,0 +1,24 @@
+{
+  "name": "run-sql-queries",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@guolao/vue-monaco-editor": "^1.1.3",
+    "node-sql-parser": "^4.8.0",
+    "vue": "^3.3.4",
+    "vue-virtual-scroller": "2.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5"
+  }
+}

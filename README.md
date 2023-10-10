@@ -1,6 +1,7 @@
 # Task - Atlan Frontend Engineer
 
 This is a dummy application made for interview.
+Deployed app [here](https://dummy-sql.netlify.app/).
 
 ## Overview
 
